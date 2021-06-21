@@ -1,5 +1,5 @@
 package assignment.date19
-
+import java.util
 import java.util
 
 import scala.annotation.tailrec
@@ -33,10 +33,22 @@ import scala.annotation.tailrec
  *  1. Do it via tail recursion & non-tail recursion both
  */
 class Assignment3 {
+  ef calculateMaxGroupSize(n:util.List[Int]):Int={
 
-  def calculateMaxGroupSize(input: util.List[Int]): Int = 0
+    var count:Int=0
+    var result=0
+    var i=0
 
-  @tailrec
-  final def calculateMaxGroupSizeTailRec(input: util.List[Int]): Int =
-    calculateMaxGroupSizeTailRec(input)
+    for(i <- 0 until n.size()){
+      if(n.get(i)==1){
+        count=count+1
+        result=Math.max(result,count)
+      }
+      else
+        count=0
+    }
+    result
+  }
+
+
 }

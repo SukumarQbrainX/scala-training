@@ -1,5 +1,5 @@
 package assignment.date19
-
+import java.util
 /**
  * Create methods in such a way that it can take any number
  * of arguments and calculate sum.
@@ -19,5 +19,27 @@ package assignment.date19
  *  and write a logic to print the output on console.
  */
 class Assignment2 {
+  def calculateSumUsingForLoop(n:util.List[Int]):Int={
+    var sum=0
+    var i=0
+    for(i<-0 until n.size()){
+      sum=sum+n.get(i)
+    }
+    sum
+  }
+  def calculateSumUsingWhileLoop(n:util.List[Int]):Int={
+
+    var sum=0
+    var i=0
+    while(i<=n.size()-1){
+      sum=sum+n.get(i)
+      i=i+1
+    }
+    sum
+  }
+
+
+
+
 
 }

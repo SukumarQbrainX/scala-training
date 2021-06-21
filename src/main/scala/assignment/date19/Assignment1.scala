@@ -33,9 +33,23 @@ import scala.annotation.tailrec
  *  2. "main" method is present to print the output
  */
 class Assignment1 {
+  def fib(n:Int):Int={
+    if(n<=1) n
 
-  def fib(n: Int): Int = 0
+    else fib(n-1)+fib(n-2)
+  }
 
-  @tailrec
-  final def fibTailRec(n:Int): Int = fibTailRec(n)
+  final def fibTailRec(n:Int):Int={
+    @tailrec
+    def fib(n:Int,a:Int,b:Int):Int={
+      if(n<0) n
+      else if(n==0) a
+      else if(n==1) b
+      else fib(n-1,b,a+b)
+
+    }
+    fib(n,0,1)
+  }
+
+
 }
