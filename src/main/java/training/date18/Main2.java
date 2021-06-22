@@ -22,8 +22,8 @@ public class Main2 {
         System.out.println(scalaJavaOpExample.javaMap().keySet());
         System.out.println(scalaJavaOpExample.date());
         System.out.println(scalaJavaOpExample.student());
-        System.out.println(scalaJavaOpExample.student().getName());
-        System.out.println(scalaJavaOpExample.student().getRollNumber());
+       // System.out.println(scalaJavaOpExample.student().getName());
+       // System.out.println(scalaJavaOpExample.student().getRollNumber());
 
 
         int[] arr = {1,2,3,4};

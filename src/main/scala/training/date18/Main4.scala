@@ -43,17 +43,20 @@ object Main4 {
 
   // for loop
   def printLoop1(a: Int): Unit = {
+    println(">>>>>>>>>printLoop1<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<")
+    println(">>>>>>>>>1 to a by 2")
     for (i <- 1 to a by 2) {
       println(i)
     }
-    println(">>>>>>>>>")
+    println(">>>>>>>>>a to 1 by -1")
     for (i <- a to 1 by -1) {
       println(i)
     }
-    println(">>>>>>>>>")
+    println(">>>>>>>>>1 until a")
     for (i <- 1 until a) {
       println(i)
     }
+    println(">>>>>>>>>printLoop1<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<")
   }
 
   def printLoop2(a: Int*): Unit = {
