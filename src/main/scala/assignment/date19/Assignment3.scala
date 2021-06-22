@@ -1,7 +1,6 @@
 package assignment.date19
 
 import java.util
-
 import scala.annotation.tailrec
 
 /**
@@ -34,9 +33,46 @@ import scala.annotation.tailrec
  */
 class Assignment3 {
 
-  def calculateMaxGroupSize(input: util.List[Int]): Int = 0
+  def calculateMaxGroupSize(input: util.List[Int]): Int = {
+    var counterMax = 0
+    var counter = 0
+    for(i <- 0 until input.size) {
+      //println(" i......:" + i + ", input.get(i):" + input.get(i) )
+      if (input.get(i) == 1) {
+        counter += 1
+      } else {
+        //counterMax = counter
+        counter = 0
+      }
+      if (counterMax < counter) {
+        counterMax = counter
+      }
+      //println(".....counterMax>:" + counterMax + ", counter...........................:" + counter )
+    }
+    //println(" counterMax...........................:" + counterMax )
+    counterMax
+  }
 
-  @tailrec
-  final def calculateMaxGroupSizeTailRec(input: util.List[Int]): Int =
-    calculateMaxGroupSizeTailRec(input)
+  //@tailrec
+  final def calculateMaxGroupSizeTailRec(input: util.List[Int]): Int = {
+    @tailrec
+    def calculateMaxGroupSizeTailRec1(input: util.List[Int], tempCount: Int, max: Int) : Int = {
+      var counterMax = max
+      var counter = tempCount
+      if (input.size() == 0) {
+        max
+      } else {
+        if (input.get(0) == 1) {
+          counter += 1
+        } else {
+          counter = 0
+        }
+        if (counterMax < counter) {
+          counterMax = counter
+        }
+        calculateMaxGroupSizeTailRec1(input.subList(1, input.size), counter, counterMax)
+      }
+    }
+    calculateMaxGroupSizeTailRec1(input, 0, 0)
+  }
 }
