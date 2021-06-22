@@ -34,8 +34,25 @@ import scala.annotation.tailrec
  */
 class Assignment1 {
 
-  def fib(n: Int): Int = 0
+  def fib(n: Int): Int = {
+    if(n<=0)
+      0
+    else if (n < 3)
+      1
+    else
+      fib(n - 1) + fib(n - 2)
+  }
 
-  @tailrec
-  final def fibTailRec(n:Int): Int = fibTailRec(n)
+ // @tailrec
+  final def fibTailRec(n:Int): Int = {
+    @tailrec
+    def getTR(n:Int,s:Int,e:Int):Int= {
+      if (n <= 0) {
+        e
+      } else {
+        (getTR(n - 1, s = s + e, e = s))
+      }
+    }
+    getTR(n,s=1,e=0)
+  }
 }
