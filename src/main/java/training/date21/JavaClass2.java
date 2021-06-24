@@ -13,6 +13,9 @@ public class JavaClass2 {
 
         ScalaObjectClass1$ scalaObjectClass1 = ScalaObjectClass1$.MODULE$;
 
+        Runnable runnable = ScalaObjectClass1$.MODULE$;
+
         scalaObjectClass1.printHelloWorld();
+        runnable.run();
     }
 }
