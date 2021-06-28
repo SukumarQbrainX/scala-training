@@ -1,19 +1,19 @@
 package assignment.date19;
 
 class User {
-        private final String Name;
-        private final long MobileNumber;
+        private final String name;
+        private final long mobileNumber;
 
-        public  User(String Name, long MobileNumber){
-        this.Name = Name;
-        this.MobileNumber = MobileNumber;
+        public  User(String name, long mobileNumber){
+        this.name = name;
+        this.mobileNumber = mobileNumber;
     }
 
     public String getName () {
-        return this.Name;
+        return this.name;
     }
     public long getNumber () {
-        return this.MobileNumber;
+        return this.mobileNumber;
     }
 
 
