@@ -35,6 +35,7 @@ import scala.annotation.tailrec
 class Assignment1 {
   def fib(n:Int):Int={
     if(n<=1) n
+    else if(n<0) 0
 
     else fib(n-1)+fib(n-2)
   }
@@ -42,7 +43,7 @@ class Assignment1 {
   final def fibTailRec(n:Int):Int={
     @tailrec
     def fib(n:Int,a:Int,b:Int):Int={
-      if(n<0) n
+      if(n<0) 0
       else if(n==0) a
       else if(n==1) b
       else fib(n-1,b,a+b)
