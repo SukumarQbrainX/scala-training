@@ -35,10 +35,13 @@ import scala.annotation.tailrec
 class Assignment1 {
 
   def fib(n: Int): Int = {
-    if (n == 0 || n < 1) {
+    if (n .== (0)) {
       0
     } else if(n==1) {
       1
+    }else if(n.<(0)){
+      println("Number should be greater than or equals to zero!!!")
+      0
     }else{
       fib(n-1)+fib(n-2)
     }
@@ -46,14 +49,19 @@ class Assignment1 {
   //Tail Recursion
 
   final def fibTailRec(n: Int): Int = {
-    @annotation.tailrec
-    def getTailRec(n: Int, prev: Int, current: Int): Int = {
-      if (n <= 0) {
-        current
-      } else {
-        getTailRec(n - 1, prev = prev + current, current = prev)
-      }
-    }
-    getTailRec(n, prev = 1, current = 0)
+     if (n < 2) {
+      if (n < 0) println(" negative number ")
+      n
+    } else {
+     @annotation.tailrec
+     def getTailRec(n: Int, prev: Int, current: Int): Int = {
+       if (n <= 0) {
+         current
+       } else {
+         getTailRec(n - 1, prev = prev + current, current = prev)
+        }
+     }
+     getTailRec(n, prev = 1, current = 0)
+  } 
   }
 }
