@@ -55,21 +55,21 @@ class Assignment3 {
 
  final def calculateMaxGroupSizeTailRec(input: util.List[Int]): Int = {
     @tailrec
-    def calculateMaxGroupSizeTailRec1(input: util.List[Int], tempCount: Int, max: Int) : Int = {
-      var counterMax = max
-      var counter = tempCount
+    def calculateMaxGroupSizeTailRec1(input: util.List[Int], temp: Int, max: Int) : Int = {
+      var countmax = max
+      var count = temp
       if (input.size() == 0) {
         max
       } else {
         if (input.get(0) == 1) {
-          counter += 1
+          count += 1
         } else {
-          counter = 0
+          count = 0
         }
-        if (counterMax < counter) {
-          counterMax = counter
+        if (countMax < count) {
+          countMax = count
         }
-        calculateMaxGroupSizeTailRec1(input.subList(1, input.size), counter, counterMax)
+        calculateMaxGroupSizeTailRec1(input.subList(1, input.size), count, countMax)
       }
     }
     calculateMaxGroupSizeTailRec1(input, 0, 0)
