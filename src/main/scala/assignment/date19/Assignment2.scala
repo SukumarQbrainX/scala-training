@@ -19,21 +19,21 @@ import java.util
  *  and write a logic to print the output on console.
  */
 class Assignment2 {
-  def calculateSumUsingWhileLoop(n: util.List[Int]): Int ={
-    val a=n
+  def calculateSumUsingWhileLoop(n:Int*): Int ={
+    
     var i,sum=0
-    var j=a.size()
+    var j=n.size()
     while(i <= j-1) {
-      sum+=a.get(i)
+      sum+=n(i)
       i+=1
     }
     sum
   }
-  def calculateSumUsingForLoop(n: util.List[Int]): Int ={
-    val a=n
+  def calculateSumUsingForLoop(n: Int*): Int ={
+    
     var sum=0
-    for(i <- 0 until a.size()){
-      sum+=a.get(i)
+    for(i <- 0 until n.size()){
+      sum+=n(i)
     }
     sum
   }
