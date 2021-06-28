@@ -18,18 +18,18 @@ object Main {
     println(">>>>>>>>>> Assignment-1 >>>>>>>>>>")
   }
 
-  def assignment2Run(inputs: util.List[util.List[Int]]): Unit = {
+ def assignment2Run() : Unit = {
     println(">>>>>>>>>> Assignment-2 >>>>>>>>>>")
     val assignment2 = new Assignment2
-    for (i <- 0 until inputs.size()) {
+    println(assignment2.calculateSumUsingWhileLoop(-10))
+    println(assignment2.calculateSumUsingWhileLoop(-10, 8, -1))
+    println(assignment2.calculateSumUsingWhileLoop(1, 2, 3, 4))
 
-      var value = inputs.get(i)
-      println(assignment2.calculateSumUsingForLoop(value))
-      println(assignment2.calculateSumUsingWhileLoop(value))
-    }
-    println(">>>>>>>>Assignment2>>>>>>>.")
+    println(assignment2.calculateSumUsingForLoop(-10))
+    println(assignment2.calculateSumUsingForLoop(-10, 8, -1))
+    println(assignment2.calculateSumUsingForLoop(1, 2, 3, 4))
+    println(">>>>>>>>>> Assignment-2 >>>>>>>>>>")
   }
-
 
   def assignment3Run(in:util.List[util.List[Int]]):Unit={
     println(">>>>>>>>>>>>>>Assignment3>>>>>>>>>>>>>>")
@@ -39,6 +39,7 @@ object Main {
     {
       val value=in.get(i)
       println(assignment3.calculateMaxGroupSize(value))
+      println(assignment3.calculateMaxGroupSizeTailRec(value))
 
     }
   }
@@ -53,11 +54,7 @@ object Main {
 
   def main(args: Array[String]): Unit = {
     assignment1Run(util.Arrays.asList(-10, 1, 0, 2, 3, 5, 7))
-    assignment2Run(util.Arrays.asList(util.Arrays.asList(-10, 1, 0, 2, 3, 5, 7),
-      util.Arrays.asList(-10),
-      util.Arrays.asList(-10, 8, -1),
-    ))
-    util.Arrays.asList(1, 2, 3, 4)
+    assignment2Run()
 
     assignment3Run(util.Arrays.asList(
       util.Arrays.asList(1, 1, 1, 0, 0, 1, 1),
