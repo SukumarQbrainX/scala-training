@@ -1,6 +1,7 @@
 package assignment.date19
 
 import java.util
+import java.util.Comparator
 
 import scala.annotation.tailrec
 
@@ -34,9 +35,36 @@ import scala.annotation.tailrec
  */
 class Assignment3 {
 
-  def calculateMaxGroupSize(input: util.List[Int]): Int = 0
+  def calculateMaxGroupSize(input: util.List[Int],
+                            maxSize:Int = 0,
+                            currSize:Int = 0,
+                            count: Int=0): Int = {
+    return 1
+  }
 
   @tailrec
-  final def calculateMaxGroupSizeTailRec(input: util.List[Int]): Int =
-    calculateMaxGroupSizeTailRec(input)
+  final def calculateMaxGroupSizeTailRec(input: util.List[Int],
+                                         maxSize:Int = 0,
+                                         currSize:Int = 0,
+                                         count: Int=0): Int = {
+    if (input.size() == count) {
+      maxSize
+    }
+    else {
+      val arrayValue = input.get(count)
+      var localMaxSize = maxSize
+      var localCurrSize = currSize
+      if (arrayValue.equals(1)) {
+        localCurrSize = localCurrSize + 1
+      }
+      if (localMaxSize < localCurrSize) {
+        localMaxSize = localCurrSize
+      }
+      if (arrayValue.equals(0)) {
+        localCurrSize = localCurrSize - localCurrSize
+      }
+      calculateMaxGroupSizeTailRec(input, localMaxSize, localCurrSize, count + 1)
+    }
+
+  }
 }

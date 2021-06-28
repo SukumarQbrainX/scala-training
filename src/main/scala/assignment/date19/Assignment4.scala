@@ -14,4 +14,10 @@ package assignment.date19
  */
 class Assignment4 {
 
+  def printUserInfo(user: User): String = {
+    val userInfo = user.getName + user.getMobileNumber
+    println(userInfo)
+    userInfo
+  }
+
 }
