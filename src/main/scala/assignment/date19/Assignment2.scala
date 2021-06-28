@@ -20,21 +20,21 @@ package assignment.date19
  */
 class Assignment2 {
 
-  def calculateSumUsingWhileLoop(n : Int*) : Long = {
+  def calculateSumUsingWhileLoop(inputs: Int*) : Long = {
     var counter = 0
     var sum = 0
-    while (counter < n.size) {
-      sum += n(counter)
+    while (counter < inputs.size) {
+      sum += inputs(counter)
       counter += 1
     }
     sum
   }
 
-  def calculateSumUsingForLoop(n : Int*) : Long = {
+  def calculateSumUsingForLoop(inputs : Int*) : Long = {
     var sum = 0
-    for (i <- 0 until n.size) {
+    for (i <- 0 until inputs.size) {
     
-      sum += n(i)
+      sum += inputs(i)
     }
     sum
   }
