@@ -16,8 +16,8 @@ import jdk.jfr.Name
  */
 class Assignment4 {
 
-  def user(Name: String,MobileNumber:Long):Unit={
-    val a=new User(Name,MobileNumber)
+  def user(name: String,mobileNumber:Long):Unit={
+    val a=new User(name,mobileNumber)
     println(a.getName)
     println(a.getNumber)
   }
