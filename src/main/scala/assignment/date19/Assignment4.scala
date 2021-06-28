@@ -35,13 +35,11 @@ class Assignment4 {
     println(u.getName+" --> "+u.getMobileNumber)
   }
   def main(args:Array[String]): Unit ={
-
     assignment4Run("AAA",123456789)
     assignment4Run("BBB",103050709)
     assignment4Run("CCC",2040608010)
     assignment4Run("DDD",123123123)
+    assignment4Run("EEE",1111222333)
   }
 }
-
-
 }
