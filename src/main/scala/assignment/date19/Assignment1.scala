@@ -62,19 +62,7 @@ class Assignment1 {
     }*/
   }
 
-  //@tailrec
-  final def fibTailRec(n:Int): Int = {
-    if (n < 2) {
-      if (n < 0) println(" negative number ")
-      n
-    } else {
-      @tailrec
-      def fibTailRecInner(n: Int, a: Int, b: Int): Int = {
-        fibTailRecInner(n - 1, b, a + b)
-      }
-      fibTailRecInner(n, 0, 1)
-    }
-  }
+ 
 
   final def fibTailRec1(n:Int): Int = {
     if (n < 2) {
