@@ -35,21 +35,41 @@ import scala.annotation.tailrec
 class Assignment3 {
 
   def calculateMaxGroupSize(input: util.List[Int]): Int = {
-    var sum: Int = 0
-    var m: Int = 0
-    for (i <- 0 until input.size()) {
-      if (input.get(i) == 0) {
-        sum = 0;
+    var ctr=0
+    var ctm = 0
+    for(i <- 0 until input.size) {
+      if (input.get(i) == 1) {
+        ctr += 1
       } else {
-        sum += 1;
-        if (sum > m)
-          m = sum;
+        ctr = 0
+      }
+      if (ctm < ctr) {
+        ctm = ctr
       }
     }
-    return m
+    ctm
   }
 
+ final def calculateMaxGroupSizeTailRec(input: util.List[Int]): Int = {
   @tailrec
-  final def calculateMaxGroupSizeTailRec(input: util.List[Int]): Int =
-    calculateMaxGroupSizeTailRec(input)
+  def calculateMaxGroupSizeTailRec1(input: util.List[Int], tc: Int, mx: Int) : Int = {
+    var ctr = tc
+    var ctm = mx
+  if (input.size() == 0) {
+  mx
+  } else {
+  if (input.get(0) == 1) {
+  ctr += 1
+  } else {
+  ctr = 0
+  }
+  if (ctm < ctr) {
+  ctm = ctr
+  }
+  calculateMaxGroupSizeTailRec1(input.subList(1, input.size), ctr, ctm)
+  }
+  }
+  calculateMaxGroupSizeTailRec1(input, 0, 0)
+  }
+  }
 }
