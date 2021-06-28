@@ -19,27 +19,22 @@ import java.util
  *  and write a logic to print the output on console.
  */
 class Assignment2 {
-  def calculateSumUsingForLoop(n:util.List[Int]):Int={
-    var sum=0
-    var i=0
-    for(i<-0 until n.size()){
-      sum=sum+n.get(i)
-    }
-    sum
-  }
-  def calculateSumUsingWhileLoop(n:util.List[Int]):Int={
-
-    var sum=0
-    var i=0
-    while(i<=n.size()-1){
-      sum=sum+n.get(i)
-      i=i+1
+  def calculateSumUsingWhileLoop(n : Int*) : Long = {
+    var i = 0
+    var sum = 0
+    while (i < n.size) {
+      sum += n(i)
+      i += 1
     }
     sum
   }
 
-
-
-
-
+  def calculateSumUsingForLoop(n : Int*) : Long = {
+    var sum = 0
+    for (i <- 0 until n.size) {
+    
+      sum += n(i)
+    }
+    sum
+  }
 }
