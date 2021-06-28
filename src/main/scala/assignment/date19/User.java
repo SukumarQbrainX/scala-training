@@ -1,8 +1,8 @@
 package AssignmentDate19;
 
 public class User {
-    private String name;
-    private long mobileNumber;
+    private final String name;
+    private final long mobileNumber;
 
     public  User(String name,Long mobileNumber){
         this.name=name;
